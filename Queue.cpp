@@ -11,21 +11,21 @@ Queue<T>::~Queue() {
 
     while (temp != nullptr) {  // checking if headptr is null
         hold = temp->nextPtr;
-        delete temp; //deleting the temp value within the Linked List
+        delete temp; //deleting the temp value 
         temp = hold;
     }
 
-    headPtr = nullptr; //setting the head and tail pointer == nullpointer to indicate Linked List is empty
+    headPtr = nullptr; //setting the head and tail pointer == nullpointer to indicate  is empty
     tailPtr = nullptr;
 }
 
 template<typename T>
 size_t Queue<T>::qSize() const {
-    return counter;
+    return counter; //return the counter that keep track of the queue size
 }
 
 template<typename T>
-void Queue<T>::push(const T& val) {
+void Queue<T>::push(const T& val) { //pushing value into the queue
     Node* newNode = new Node(val);
     if (isempty()) {
         headPtr = tailPtr = newNode;
@@ -44,7 +44,7 @@ bool Queue<T>::isempty() const {  // check if Queue is empty
 
 
 template<typename T>
-void Queue<T>::pop() {
+void Queue<T>::pop() { //removing the front value of the queue
     if (isempty()) return;
 
     Node* OGfront = headPtr;
@@ -59,18 +59,18 @@ void Queue<T>::pop() {
 
 
 template<typename T>
-T& Queue<T>::front() {
+T& Queue<T>::front() { //returning the front value
     return headPtr->data;
 }
 
 
-template<typename T>
+template<typename T> //returning the const front value
 const T& Queue<T>::front() const{
     return headPtr->data;
 }
 
 template<typename T>
-void Queue<T>::move_rear() {
+void Queue<T>::move_rear() { //moving the front value to the rear
     if (qSize() <= 1) {
         return;
     }
@@ -81,7 +81,7 @@ void Queue<T>::move_rear() {
 }
 
 template<typename T>
-void Queue<T>::printQ() {
+void Queue<T>::printQ() { //print the entire queue unless it's empty
     if (isempty()) {
         cout << "Queue is empty!\n";
         return;

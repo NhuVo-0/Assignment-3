@@ -14,34 +14,34 @@ using namespace std;
 template<typename T> 
 class Queue {
 private:
-    struct Node { //node structure for the linked list
+    struct Node { //node structure
         T data; //template class T data
         Node* nextPtr;
         Node(const T& d, Node* next = nullptr) : data(d), nextPtr(next){} //node constructor
     };
 	Node* headPtr; //head pointer
 	Node* tailPtr; //tail pointer
-    size_t counter; //counter to keep track of the size of the stack or the linked list, this will be inherited by the stack also
+    size_t counter; //counter to keep track of the size 
 public:
-    Queue();
+    Queue(); //constructor
 
-    ~Queue();
+    ~Queue(); //destructor
 
-    bool isempty() const;
+    bool isempty() const; //check if Queue is empty
 
-    size_t qSize() const;
+    size_t qSize() const; //check for the queue's size
 
-    void push(const T& val);
+    void push(const T& val); //push a const value to the queue
 
-    void pop();
+    void pop(); //pop the front value of the queue
 
-    T& front();
+    T& front(); //return the front of the queue
 
-    const T& front() const;
+    const T& front() const; //return the const front of the queue
 
-    void move_rear();
+    void move_rear(); //moving the front value of the queue to the end
 
-    void printQ();
+    void printQ(); //displace the queue
 
 
 };
